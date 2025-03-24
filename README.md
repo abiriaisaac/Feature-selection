@@ -59,11 +59,12 @@ The `requirements.txt` file includes the following libraries:
 ## Usage
 
 ### 1. Prepare the Dataset
-Place your dataset (`Feature_selection_1_2.csv`) in the `data/` folder. The dataset should contain the following columns:
+Place your dataset (`Feature_selection_1_2.csv`) in the the same directory.The dataset should contain the following columns:
 - `stress`
 - `defect_size`
 - `distance_from_surface`
 - `defect_circularity`
+  or any other feature to be evaluated.
 - `cycle` (target variable)
 
 ### 2. Run the Script
@@ -114,71 +115,3 @@ A bar plot showing the mean absolute SHAP values for the top 10 features.
 - A pie chart (`feature_contributions_piechart.png`) visualizing the feature contributions.
 
 ---
-
-## Example Outputs
-
-### Correlation Heatmap
-![Correlation Heatmap](outputs/correlation_heatmap.png)
-
-### SHAP Summary Plot
-![SHAP Summary Plot](outputs/shap_summary_plot.png)
-
-### Feature Contributions Pie Chart
-![Feature Contributions Pie Chart](outputs/feature_contributions_piechart.png)
-
----
-
-## Troubleshooting
-
-### 1. **Missing Dataset**
-Ensure the dataset (`Feature_selection_1_2.csv`) is placed in the `data/` folder.
-
-### 2. **Dependency Installation Issues**
-If you encounter issues while installing dependencies, try upgrading `pip`:
-```bash
-pip install --upgrade pip
-```
-
-### 3. **File Not Found Error**
-Ensure the `outputs/` folder exists. If not, create it manually:
-```bash
-mkdir outputs
-```
-
----
-
-## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
----
-
-## Acknowledgments
-- **XGBoost**: [https://xgboost.ai/](https://xgboost.ai/)
-- **SHAP**: [https://shap.readthedocs.io/](https://shap.readthedocs.io/)
-- **Scikit-learn**: [https://scikit-learn.org/](https://scikit-learn.org/)
-
----
-
-## How to Upload to GitHub
-
-1. **Create a New Repository**:
-   - Go to GitHub and create a new repository named `xgboost-shap-analysis`.
-
-2. **Initialize the Repository**:
-   - Open a terminal and navigate to your project folder.
-   - Run the following commands to initialize the repository and push the code:
-     ```bash
-     git init
-     git add .
-     git commit -m "Initial commit"
-     git branch -M main
-     git remote add origin https://github.com/yourusername/xgboost-shap-analysis.git
-     git push -u origin main
-     ```
-
-3. **Verify Upload**:
-   - Go to your GitHub repository and ensure all files (including `README.md`, `main.py`, `requirements.txt`, and the `data/` folder) are uploaded.
-
----
-
-This README file provides all the necessary information to set up, run, and understand the project. It is designed to be user-friendly and comprehensive for both beginners and experienced users.
