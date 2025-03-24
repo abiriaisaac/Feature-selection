@@ -1,4 +1,3 @@
-
 # XGBoost and SHAP Analysis
 
 This project demonstrates the use of **XGBoost** for regression and **SHAP (SHapley Additive exPlanations)** for feature importance analysis. The goal is to predict the fatigue life cycle of a material based on features like stress, defect size, distance from the surface, and defect circularity. The project includes data loading, model training, evaluation, and interpretation using SHAP values.
@@ -14,35 +13,12 @@ This project demonstrates the use of **XGBoost** for regression and **SHAP (SHap
 
 ---
 
-## Project Structure
-```
-xgboost-shap-analysis/
-│
-├── README.md                   # Project documentation
-├── requirements.txt            # List of dependencies
-├── main.py                     # Main script to run the analysis
-├── data/                       # Contains the dataset
-│   └── Feature_selection_1_2.csv
-└── outputs/                    # Stores output files
-    ├── feature_contributions.xlsx
-    └── feature_contributions_piechart.png
-```
-
----
-
 ## Installation
 
-### 1. Clone the Repository
-First, clone the repository to your local machine:
-```bash
-git clone https://github.com/abiriaisaac/xgboost-shap-analysis.git
-cd xgboost-shap-analysis
-```
+### Install Dependencies
+This project requires Python 3.x and several libraries. Install the dependencies using `pip` or `conda`:
 
-### 2. Install Dependencies
-This project requires Python 3.x and several libraries. Install the dependencies using pip or conda
 #### Dependencies
-The `requirements.txt` file includes the following libraries:
 - `shap`: For SHAP value calculations and visualizations.
 - `xgboost`: For training the XGBoost regression model.
 - `scikit-learn`: For model evaluation metrics.
@@ -52,35 +28,41 @@ The `requirements.txt` file includes the following libraries:
 - `seaborn`: For enhanced visualizations.
 - `openpyxl`: For saving feature contributions to an Excel file.
 
+To install all dependencies, run:
+```bash
+pip install shap xgboost scikit-learn pandas numpy matplotlib seaborn openpyxl
+```
+
 ---
 
 ## Usage
 
 ### 1. Prepare the Dataset
-Place your dataset (`Feature_selection_1_2.csv`) in the the same directory.The dataset should contain the following columns:
+Place your dataset (`Feature_selection_1_2.csv`) in the same directory as the script. The dataset should contain the following columns:
 - `stress`
 - `defect_size`
 - `distance_from_surface`
 - `defect_circularity`
-  or any other feature to be evaluated.
 - `cycle` (target variable)
 
+You can modify the script to include other features for evaluation.
+
 ### 2. Run the Script
-Run the `main.py` script to perform the analysis:
+Run the `Feature_importance_analysis.py` script to perform the analysis:
 ```bash
-python main.py
+python Feature_importance_analysis.py
 ```
 
 ### 3. Check Outputs
 After running the script, the following outputs will be generated:
-- **`outputs/feature_contributions.xlsx`**: Excel file containing the percentage contribution of each feature.
-- **`outputs/feature_contributions_piechart.png`**: Pie chart visualizing the feature contributions.
+- **`feature_contributions.xlsx`**: Excel file containing the percentage contribution of each feature.
+- **`feature_contributions_piechart.png`**: Pie chart visualizing the feature contributions.
 
 ---
 
 ## Code Overview
 
-### `main.py`
+### `Feature_importance_analysis.py`
 This is the main script that performs the following tasks:
 1. **Loads the dataset** and separates features and target variables.
 2. **Trains an XGBoost regression model**.
